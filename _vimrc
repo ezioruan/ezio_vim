@@ -20,9 +20,6 @@
 " Pytest
 "     Runs your Python tests in Vim.
 "
-" Commant-T
-"     Allows easy search and opening of files within a given path
-"
 " Snipmate
 "     Configurable snippets to avoid re-typing common comands
 "
@@ -156,7 +153,7 @@ set wildignore+=*.o,*.obj,.git,*.pyc
 set wildignore+=eggs/**
 set wildignore+=*.egg-info/**
 
-"set grepprg=ack         " replace the default grep program with ack
+set grepprg=ack         " replace the default grep program with ack
 
 
 " Set working directory
@@ -274,7 +271,7 @@ let g:acp_completeoptPreview=1
 ""Use template for python file"
 autocmd BufNewFile *.py 0r ~/.vim/template/empty.py
 "run python scripts"
-map <F5> :w<cr>:!python %<cr>
+map <F9> :w<cr>:!python %<cr>
 " Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
 autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
@@ -307,3 +304,17 @@ if filereadable($VIRTUAL_ENV . '/.vimrc')
 endif
 
 set colorcolumn=79
+" ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
+let g:ctrlp_working_path_mode=0
+let g:ctrlp_match_window_bottom=1
+let g:ctrlp_max_height=15
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_mruf_max=500
+let g:ctrlp_follow_symlinks=1
+
+

@@ -1,0 +1,33 @@
+###############
+#  fixed file #
+###############
+*.exe
+*.txt
+*.def
+*.dsp
+*.lib
+*.doc
+*.dll
+*.lnt
+*.pm
+*.xls
+*.dbg
+*.DBG
+*.o
+*.plg
+*.keep
+*.pyc
+
+
+###############
+#  temp file  #
+###############
+~*
+*.log
+*.cmm
+*.men
+*.ini
+*.fig
+*.cmp
+*.tmp
+
