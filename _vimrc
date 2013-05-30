@@ -272,6 +272,8 @@ let g:acp_completeoptPreview=1
 autocmd BufNewFile *.py 0r ~/.vim/template/empty.py
 "run python scripts"
 map <F9> :w<cr>:!python %<cr>
+"debug python scripts
+map <c-F9> :w<cr>:!python -m pdb % <cr>
 " Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
 autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
@@ -317,4 +319,6 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 
+" for go
+set rtp+=$GOROOT/misc/vim
 
