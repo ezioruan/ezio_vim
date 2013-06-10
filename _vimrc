@@ -136,6 +136,7 @@ call pathogen#helptags()
 " ==========================================================
 syntax on                     " syntax highlighing
 filetype on                   " try to detect filetypes
+filetype plugin on            " enable filetype flugin
 filetype plugin indent on     " enable loading indent file for filetype
 set number                    " Display line numbers
 set numberwidth=1             " using only 1 column (and 1 space) while possible
@@ -320,5 +321,4 @@ let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 
 " for go
-set rtp+=$GOROOT/misc/vim
 
