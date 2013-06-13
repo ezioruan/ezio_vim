@@ -322,5 +322,5 @@ let g:ctrlp_follow_symlinks=1
 
 " for go
 autocmd FileType go compiler golang
-let g:golang_goroot = "/usr/local/go"
+let g:golang_goroot = "/usr/lib/go"
 
