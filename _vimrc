@@ -102,6 +102,7 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+map <c-q> <c-w>q
 
 " and lets make these all work in insert mode too ( <C-O> makes next cmd
 "  happen as if in command mode )
@@ -323,4 +324,4 @@ let g:ctrlp_follow_symlinks=1
 " for go
 autocmd FileType go compiler golang
 let g:golang_goroot = "/usr/lib/go"
-
+let g:golang_cwindow = 1 "for the quickfix window
