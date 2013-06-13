@@ -10,7 +10,7 @@ vimrc_file = os.path.abspath(os.path.join(here,'_vimrc'))
 
 home = os.environ['HOME']
 user_vim_dictory = os.path.abspath(os.path.join(home,'.vim/'))
-user_vim_rc = os.path.abspath(os.path.join(home,'vimrc'))
+user_vim_rc = os.path.abspath(os.path.join(home,'.vimrc'))
 
 if os.path.islink(user_vim_dictory):
     print '%s exists, will be detele' % user_vim_dictory
