@@ -73,7 +73,6 @@ au CursorHold <buffer> call s:GetGolangMessage()
 au CursorMoved <buffer> call s:GetGolangMessage()
 
 let $GOROOT=golang_goroot
-let $GOPATH=substitute(expand("%:p:h"),"\\(.*\\)/src.*","\\1",'g')
 let $PATHESCAPED=substitute(expand("%:p:h"),"\/","\\\\/",'g')
 CompilerSet makeprg=cd\ %:p:h;\ $GOROOT/bin/go\ build\ 2>&1\\\|sed\ -e\ \'s\/^\\(.*\\)\.go/$PATHESCAPED\\/\\1.go\/g\'
 CompilerSet efm=%f:%l:%m

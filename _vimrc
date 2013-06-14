@@ -238,7 +238,7 @@ if has("gui_running")
     " Remove toolbar
     set guioptions-=T
 else
-    colorscheme vividchalk
+    colorscheme vibrantink
 endif
 
 " Paste from clipboard
@@ -323,7 +323,7 @@ let g:ctrlp_follow_symlinks=1
 
 " for go
 autocmd FileType go compiler golang
-let g:golang_goroot = "/usr/lib/go"
+let g:golang_goroot = "/usr/local/go"
 let g:golang_cwindow = 1 "for the quickfix window
 " for sdcv
-nmap <C-k> : !sdcv <C-R>=expand("<cword>")<CR><CR>
+nmap <C-S> : !sdcv <C-R>=expand("<cword>")<CR><CR>
