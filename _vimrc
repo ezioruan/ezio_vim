@@ -325,3 +325,5 @@ let g:ctrlp_follow_symlinks=1
 autocmd FileType go compiler golang
 let g:golang_goroot = "/usr/lib/go"
 let g:golang_cwindow = 1 "for the quickfix window
+" for sdcv
+nmap <C-k> : !sdcv <C-R>=expand("<cword>")<CR><CR>
