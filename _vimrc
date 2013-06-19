@@ -326,4 +326,4 @@ autocmd FileType go compiler golang
 let g:golang_goroot = "/usr/local/go"
 let g:golang_cwindow = 1 "for the quickfix window
 " for sdcv
-nmap <C-S> : !sdcv <C-R>=expand("<cword>")<CR><CR>
+nmap <F2> : !sdcv <C-R>=expand("<cword>")<CR><CR>

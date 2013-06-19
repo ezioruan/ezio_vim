@@ -87,11 +87,11 @@ snippet el
 		${1}
 	}
 # error snippet
-snippet ir
+snippet iferr
 	if err != nil {
-		return err
+		${1}
 	}
-	${1}
+	${2}
 # false
 snippet f
 	false
@@ -126,7 +126,7 @@ snippet fr
 	}
 # function simple 
 snippet fun
-	func ${1:funcName}(${2}) ${3:os.Error} {
+	func ${1:funcName}(${2}) (${3:error}) {
 		${4:/* code */}
 	}
 # function on receiver 
@@ -196,6 +196,17 @@ snippet sp
 # true 
 snippet t
 	true
+# type struct
+snippet ts
+	type ${1:name} struct{
+		${2:/* data */}
+	}
+	${3}
+# struct func
+snippet sf
+	func (self *${1:name}) ${2:funcname} (${3:error}){
+		${4:/* code /*}
+	}
 # variable declaration
 snippet v
 	var ${1:t} ${2:string}
