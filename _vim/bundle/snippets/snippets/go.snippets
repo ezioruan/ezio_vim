@@ -204,9 +204,15 @@ snippet ts
 	${3}
 # struct func
 snippet sf
-	func (self *${1:name}) ${2:funcname} (${3:error}){
+	func (self *${1:name}) ${2:funcname} (${3:args}) (${4:error}){
 		${4:/* code /*}
 	}
 # variable declaration
 snippet v
 	var ${1:t} ${2:string}
+# bson
+snippet bson
+	\`bson:"${1}"\`${2}
+# json
+	snippet json
+	\`json:"${1}"\`${2}
