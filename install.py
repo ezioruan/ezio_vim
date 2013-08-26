@@ -19,10 +19,22 @@ if os.path.islink(user_vim_rc):
     print '%s exists, will be delete' % user_vim_rc
     os.unlink(user_vim_rc)
 
+
+
+
 print vim_dictory,user_vim_dictory
 os.symlink(vim_dictory,user_vim_dictory)
 print 'success to install vim'
 os.symlink(vimrc_file,user_vim_rc)
 print 'success to install vimrc'
+
+
+
+
+
+
+
+
+
 
 

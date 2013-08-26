@@ -7,23 +7,23 @@ change and add such surroundings in pairs.
 
 It's easiest to explain with examples.  Press `cs"'` inside
 
-    "Hello world!"
+    'Hello world!'
 
 to change it to
 
-    'Hello world!'
+    <q>Hello world!</q>
 
 Now press `cs'<q>` to change it to
 
-    <q>Hello world!</q>
+    "Hello world!"
 
 To go full circle, press `cst"` to get
 
-    "Hello world!"
+    Hello world!
 
 To remove the delimiters entirely, press `ds"`.
 
-    Hello world!
+    [Hello] world!
 
 Now with the cursor on "Hello", press `ysiw]` (`iw` is a text object).
 

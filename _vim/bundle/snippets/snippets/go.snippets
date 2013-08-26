@@ -214,5 +214,13 @@ snippet v
 snippet bson
 	\`bson:"${1}"\`${2}
 # json
-	snippet json
+snippet json
 	\`json:"${1}"\`${2}
+# bson and json
+snippet bjson
+	\`bson:"${1:name}" json:"$1"\` //${2}
+#commoent
+snippet //
+	/**
+	 *${1}
+	 */

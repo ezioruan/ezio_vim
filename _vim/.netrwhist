@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/etc/apache2/conf.d'
 let g:netrw_dirhist_2='/home/ezioruan/code/scripts'
 let g:netrw_dirhist_3='/home/ezioruan/code/xmfy'
+let g:netrw_dirhist_4='/home/ezioruan/.vim'
+let g:netrw_dirhist_5='/home/ezioruan/wcn/w_web_site/.git'
+let g:netrw_dirhist_6='/home/ezioruan/.vim'
+let g:netrw_dirhist_7='/home/ezioruan/wcn/wcn-control-manager/.git'
