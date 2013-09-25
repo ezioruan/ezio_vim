@@ -324,7 +324,8 @@ let g:ctrlp_follow_symlinks=1
 autocmd FileType go compiler golang
 let g:golang_goroot = "/usr/local/go"
 let g:golang_cwindow = 1 "for the quickfix window
-autocmd BufWritePre *.go Fmt
+"autocmd BufWritePre *.go Fmt
+autocmd BufWritePre *.go :Fmt
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " for sdcv
 nmap <F2> : !sdcv <C-R>=expand("<cword>")<CR><CR>
