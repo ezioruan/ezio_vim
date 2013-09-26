@@ -8,7 +8,10 @@ how to install
   python install.py
 
 
-coding for go ,need to install
-##gocode  go get github.com/nsf/gocode
-##goimports go get github.com/bradfitz/goimports
-##godef go get code.google.com/p/rog-go/exp/cmd/godef
+#coding for go ,need to install
+- gocode
+   <code> go get github.com/nsf/gocode </code> 
+- goimports
+  <code> go get github.com/bradfitz/goimports </code> 
+- godef 
+  <code> go get code.google.com/p/rog-go/exp/cmd/godef </code> 
