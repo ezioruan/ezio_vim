@@ -3,9 +3,9 @@ ezio_vim
 
 for vim backup
 
-how to install
+#how to install
 
-  python install.py
+<code>   python install.py </code> 
 
 
 #coding for go ,need to install
