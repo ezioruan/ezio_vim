@@ -1,4 +1,4 @@
-let g:delimitMate_matchpairs = '(:),{:},[:],<:>,¿:?,¡:!'
+let g:delimitMate_matchpairs = '(:),{:},[:],¿:?,¡:!'
 let lines = readfile(expand('<sfile>:t:r').'.txt')
 call vimtest#StartTap()
 let testsnumber = len(filter(copy(lines), 'v:val =~ ''^"'''))

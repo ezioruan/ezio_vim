@@ -357,6 +357,7 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " for sdcv
 nmap <F2> : !sdcv <C-R>=expand("<cword>")<CR><CR>
 nmap <F3> :lv /<c-r>=expand("<cword>")<cr>/ **/*.go<cr>:lw<cr> 
+nmap <F4> :lv /<c-r>=expand("<cword>")<cr>/ **/*.py<cr>:lw<cr> 
 "括号显示增强
 let g:rbpt_colorpairs = [
             \ ['brown',       'RoyalBlue3'],
@@ -393,3 +394,4 @@ function! NumberToggle()
     endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
+let g:delimitMate_matchpairs = '(:),{:},[:],¿:?,¡:!' 
