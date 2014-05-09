@@ -307,7 +307,7 @@ function UpdateDate()
 endf
 autocmd BufNewFile *.py call AddTitlePython()
 autocmd BufWritePre *.py call UpdateDate()
-autocmd BufWritePre *.py call Autopep8()
+autocmd BufWritePost *.py call Autopep8()
 let g:autopep8_disable_show_diff=1
 
 " Add the virtualenv's site-packages to vim path   
