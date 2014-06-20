@@ -30,4 +30,5 @@
 *.fig
 *.cmp
 *.tmp
+.DS_Store
 
