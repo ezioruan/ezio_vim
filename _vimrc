@@ -373,6 +373,7 @@ let g:tagbar_type_go = {
             \ 'ctagsargs' : '-sort -silent'
             \ }
 autocmd BufWritePre *.go :Fmt
+autocmd BufRead,BufWritePre *.html normal gg=G
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " for sdcv
 nmap <F2> : !sdcv <C-R>=expand("<cword>")<CR><CR>
@@ -415,3 +416,7 @@ function! NumberToggle()
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 let g:delimitMate_matchpairs = '(:),{:},[:],¿:?,¡:!' 
+"js fmt
+let g:js_fmt_fail_silently = 1
+let g:js_fmt_autosave = 1
+let g:js_fmt_command = "jsfmt"
