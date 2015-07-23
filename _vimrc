@@ -420,3 +420,7 @@ let g:delimitMate_matchpairs = '(:),{:},[:],¿:?,¡:!'
 let g:js_fmt_fail_silently = 1
 let g:js_fmt_autosave = 1
 let g:js_fmt_command = "jsfmt"
+" for resu
+set hidden
+let g:racer_cmd = "racer"
+let $RUST_SRC_PATH="/usr/local/src/rustc-1.1.0//src/"
