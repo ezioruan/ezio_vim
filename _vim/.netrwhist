@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/ezioruan/code/ninja_server/src/logs'
 let g:netrw_dirhist_2='/Users/ezioruan/code/ninja_server/src/fight_data_2'
+let g:netrw_dirhist_3='/Users/ezioruan/code/ninja_pay/hm_php'
+let g:netrw_dirhist_4='/Users/ezioruan/code/ninja_server/sql'
+let g:netrw_dirhist_5='/Users/ezioruan/code/ninja_server_merge/logs'
+let g:netrw_dirhist_6='/Users/ezioruan/code/logistics_api/dest'
