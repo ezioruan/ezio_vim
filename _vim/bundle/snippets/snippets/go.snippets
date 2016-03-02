@@ -224,3 +224,12 @@ snippet //
 	/**
 	 *${1}
 	 */
+#testing
+snippet test
+	func Test${1:name}(t *Testing.T){
+		${2}
+	}
+snippet bm
+	func Benchmark${1:name}(b *Testing.B){
+		${2}
+	}
