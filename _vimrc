@@ -90,7 +90,7 @@ map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
+"
 " open/close the quickfix window
 nmap <leader>c :copen<CR>
 nmap <leader>cc :cclose<CR>
@@ -264,8 +264,8 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 au BufRead *.js set makeprg=jslint\ %
 
 " Use tab to scroll through autocomplete menus
-"autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
-"autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
+autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
+autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
 
 let g:acp_completeoptPreview=1
 
@@ -273,7 +273,7 @@ let g:acp_completeoptPreview=1
 " FileType specific changes
 " ============================================================
 ""Use template for python file"
-"autocmd BufNewFile *.py 0r ~/.vim/template/empty.py
+autocmd BufNewFile *.py 0r ~/.vim/template/empty.py
 "run python scripts"
 map <F9> :w<cr>:!python %<cr>
 "debug python scripts
@@ -373,7 +373,7 @@ let g:tagbar_type_go = {
             \ 'ctagsargs' : '-sort -silent'
             \ }
 autocmd BufWritePre *.go :Fmt
-autocmd BufRead,BufWritePre *.html normal gg=G
+"autocmd BufRead,BufWritePre *.html normal gg=G
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " for sdcv
 nmap <F2> : !sdcv <C-R>=expand("<cword>")<CR><CR>
@@ -416,10 +416,12 @@ function! NumberToggle()
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 let g:delimitMate_matchpairs = '(:),{:},[:],¿:?,¡:!' 
+
 "js fmt
 let g:js_fmt_fail_silently = 1
 let g:js_fmt_autosave = 1
 let g:js_fmt_command = "jsfmt"
+
 " for rust
 set hidden
 let g:racer_cmd = "racer"

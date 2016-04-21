@@ -5,14 +5,14 @@ go-fmt vimscript that ships with the [`vim-go`](https://github.com/fatih/vim-go)
 
 ## Installation
 
-** Note: You have to have jsfmt install for this to work. `npm install -g jsfmt` >= version 0.3.2
+** Note: You have to have jsfmt install for this to work. `npm install -g jsfmt` >= version 0.5.2
 
 [Download zip file](https://github.com/mephux/vim-jsfmt/archive/master.zip):
 
 To install using [Vundle](https://github.com/gmarik/Vundle.vim):
 
-    # add this line to your .vimrc file
-    Plugin "mephux/vim-jsfmt"
+    " add this line to your .vimrc file
+    Plugin 'mephux/vim-jsfmt'
 
 To install using [pathogen.vim](https://github.com/tpope/vim-pathogen):
 

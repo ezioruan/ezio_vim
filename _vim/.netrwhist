@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/ezioruan/code/ezioruan.github.io/themes'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/ezioruan/code/gorp-model/model'
+let g:netrw_dirhist_2='/Users/ezioruan/code/kafka-manager/target/universal/kafka-manager-1.3.0.7/conf'
+let g:netrw_dirhist_3='/Users/ezioruan/code/gplus-quickstart-javascript'
