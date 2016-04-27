@@ -263,9 +263,6 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " ==========================================================
 au BufRead *.js set makeprg=jslint\ %
 
-" Use tab to scroll through autocomplete menus
-autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
-autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
 
 let g:acp_completeoptPreview=1
 
@@ -342,8 +339,9 @@ let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 
 " for go
-autocmd FileType go compiler golang
+"autocmd FileType go compiler golang
 let g:golang_goroot = "/usr/local/go"
+"autocmd BufWritePre *.go :Fmt
 let g:golang_cwindow = 1 "for the quickfix window
 let g:tagbar_type_go = {
             \ 'ctagstype' : 'go',
@@ -372,7 +370,6 @@ let g:tagbar_type_go = {
             \ 'ctagsbin'  : 'gotags',
             \ 'ctagsargs' : '-sort -silent'
             \ }
-autocmd BufWritePre *.go :Fmt
 "autocmd BufRead,BufWritePre *.html normal gg=G
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " for sdcv
@@ -417,10 +414,17 @@ endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 let g:delimitMate_matchpairs = '(:),{:},[:],¿:?,¡:!' 
 
+
+" react
+"let g:syntastic_javascript_checkers = ['eslint']
+
 "js fmt
 let g:js_fmt_fail_silently = 1
-let g:js_fmt_autosave = 1
+let g:js_fmt_autosave = 0
 let g:js_fmt_command = "jsfmt"
+let g:jsx_ext_required = 0
+
+
 
 " for rust
 set hidden
@@ -428,3 +432,16 @@ let g:racer_cmd = "racer"
 let $RUST_SRC_PATH="/usr/local/src/rustc-1.1.0/src/"
 " set to 1 will be the complete with full name
 let g:racer_experimental_completer = 0
+
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+

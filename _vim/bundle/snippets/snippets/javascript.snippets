@@ -154,3 +154,106 @@ snippet sing
 
 		return instance;
 	}
+
+
+# react
+
+snippet cs
+	var cx = React.addons.classSet;
+snippet cdm
+	componentDidMount: function() {
+		${1}
+	},
+snippet cdup
+	componentDidUpdate: function(prevProps, prevState) {
+		${1}
+	},
+snippet cwm
+	componentWillMount: function() {
+		${1}
+	},
+snippet cwr
+	componentWillReceiveProps: function(nextProps) {
+		${1}
+	},
+snippet cwun
+	componentWillUnmount: function() {
+		${1}
+	},
+snippet cwu
+	componentWillUpdate: function(nextProps, nextState) {
+		${1}
+	},
+snippet cx
+	cx({
+		${1}: ${2}
+	});
+snippet fup
+	forceUpdate(${1:callback});
+snippet gdp
+	getDefaultProps: function() {
+		return {
+			${1}
+		};
+	},
+snippet gis
+	getInitialState: function() {
+		return {
+			${1}: ${2}
+		};
+	},
+snippet ism
+	isMounted()
+snippet jsx
+	/**
+	 * @jsx React.DOM
+	 */
+
+	var React = require('react');
+
+	var ${1:ClassName} = React.createClass({
+
+		render: function() {
+			return (
+				${0:<div />}
+			);
+		}
+
+	});
+
+	module.exports = $1;
+snippet pt
+	propTypes: {
+		${1}: React.PropTypes.${2:string}
+	},
+snippet rcc
+	var ${1:ClassName} = React.createClass({
+
+		render: function() {
+			return (
+				${0:<div />}
+			);
+		}
+
+	});
+snippet ren
+	render: function() {
+		return (
+			${1:<div />}
+		);
+	}
+snippet sst
+	setState({
+		${1}: ${2}
+	});
+snippet scu
+	shouldComponentUpdate: function(nextProps, nextState) {
+		${1}
+	},
+snippet props
+	this.props.${1}
+snippet state
+	this.state.${1}
+snippet trp
+	transferPropsTo(${1});
+
