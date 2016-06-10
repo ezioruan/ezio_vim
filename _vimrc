@@ -261,7 +261,6 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " ==========================================================
 " Javascript
 " ==========================================================
-au BufRead *.js set makeprg=jslint\ %
 
 
 let g:acp_completeoptPreview=1
@@ -330,7 +329,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|.rvm$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn|hg))$'
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=15
@@ -415,14 +414,14 @@ nnoremap <C-n> :call NumberToggle()<cr>
 let g:delimitMate_matchpairs = '(:),{:},[:],¿:?,¡:!' 
 
 
-" react
-"let g:syntastic_javascript_checkers = ['eslint']
 
 "js fmt
 let g:js_fmt_fail_silently = 1
 let g:js_fmt_autosave = 0
 let g:js_fmt_command = "jsfmt"
 let g:jsx_ext_required = 0
+let g:syntastic_javascript_checkers = ['eslint']
+
 
 
 
