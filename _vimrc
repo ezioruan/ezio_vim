@@ -425,23 +425,22 @@ let g:jsx_ext_required = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 "js beautify
-map <c-f> :call JsBeautify()<cr>
-" or
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript autocmd BufWritePre <buffer> call JsBeautify() 
+autocmd FileType javascript noremap <buffer>  <c-a> :call JsBeautify()<cr>
 " for json
-autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+autocmd FileType json noremap <buffer> <c-a> :call JsonBeautify()<cr>
 " for jsx
-autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <c-a> :call JsxBeautify()<cr>
 " for html
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-a> :call HtmlBeautify()<cr>
 " for css or scss
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-a> :call CSSBeautify()<cr>
 
-autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
-autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
-autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
-autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
-autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+autocmd FileType javascript vnoremap <buffer>  <c-a> :call RangeJsBeautify()<cr>
+autocmd FileType json vnoremap <buffer> <c-a> :call RangeJsonBeautify()<cr>
+autocmd FileType jsx vnoremap <buffer> <c-a> :call RangeJsxBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-a> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-a> :call RangeCSSBeautify()<cr>
 
 
 
