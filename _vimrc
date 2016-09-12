@@ -376,6 +376,7 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 nmap <F2> : !sdcv <C-R>=expand("<cword>")<CR><CR>
 nmap <F3> :lv /<c-r>=expand("<cword>")<cr>/ **/*.go<cr>:lw<cr> 
 nmap <F4> :lv /<c-r>=expand("<cword>")<cr>/ **/*.py<cr>:lw<cr> 
+nmap <F5> :lv /<c-r>=expand("<cword>")<cr>/ **/*.js<cr>:lw<cr> 
 "括号显示增强
 let g:rbpt_colorpairs = [
             \ ['brown',       'RoyalBlue3'],
@@ -425,7 +426,7 @@ let g:jsx_ext_required = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 "js beautify
-autocmd FileType javascript autocmd BufWritePre <buffer> call JsBeautify() 
+"autocmd FileType javascript autocmd BufWritePre <buffer> call JsBeautify() 
 autocmd FileType javascript noremap <buffer>  <c-a> :call JsBeautify()<cr>
 " for json
 autocmd FileType json noremap <buffer> <c-a> :call JsonBeautify()<cr>
@@ -435,6 +436,11 @@ autocmd FileType jsx noremap <buffer> <c-a> :call JsxBeautify()<cr>
 autocmd FileType html noremap <buffer> <c-a> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <c-a> :call CSSBeautify()<cr>
+
+" will run esformatter after pressing <leader> followed by the 'e' and 's'
+" keys
+nnoremap <silent> <leader>es :Esformatter<CR>
+vnoremap <silent> <leader>es :EsformatterVisual<CR>
 
 autocmd FileType javascript vnoremap <buffer>  <c-a> :call RangeJsBeautify()<cr>
 autocmd FileType json vnoremap <buffer> <c-a> :call RangeJsonBeautify()<cr>
