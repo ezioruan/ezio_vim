@@ -451,14 +451,6 @@ autocmd FileType css vnoremap <buffer> <c-a> :call RangeCSSBeautify()<cr>
 
 
 
-" for rust
-set hidden
-let g:racer_cmd = "racer"
-let $RUST_SRC_PATH="/usr/local/src/rustc-1.1.0/src/"
-" set to 1 will be the complete with full name
-let g:racer_experimental_completer = 0
-
-
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
