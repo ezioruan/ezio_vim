@@ -7,9 +7,9 @@ Yet Another JavaScript Syntax file for Vim. Key differences:
 * Recognize Web API and DOM keywords. Base on [Mozilla's WebIDL files](https://github.com/mozilla/gecko-dev/tree/master/dom/webidl)
 * Works perfect with [javascript-libraries-syntax.vim](https://github.com/othree/javascript-libraries-syntax.vim)
 * Remove old, unused syntax definitions.
-* Support ES6 new syntax, ex: arrow function `=>`. 
+* Support new syntax, ex: `async`, arrow function: `=>`. 
 
-For ES7 features such as `async`, `await`. Please install [es.next.syntax.vim](https://github.com/othree/es.next.syntax.vim).
+For ES.Next features such as decorator, binding operator. Please install [es.next.syntax.vim](https://github.com/othree/es.next.syntax.vim).
 
 ### Differences from jelera/vim-javascript-syntax
 

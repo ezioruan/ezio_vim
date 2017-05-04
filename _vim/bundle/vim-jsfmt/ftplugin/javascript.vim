@@ -11,7 +11,7 @@ if !exists('g:js_fmt_autosave')
 endif
 
 if !exists('g:js_fmt_version')
-    let g:js_fmt_version = "0.5.2"
+    let g:js_fmt_version = "0.5.3"
 endif
 
 if !exists('g:js_fmt_fail_silently')
@@ -60,6 +60,7 @@ function! s:JSFormat()
     echohl Error
     echomsg "vim-jsfmt required jsfmt version " . g:js_fmt_version . " or greater."
     echomsg "npm install -g jsfmt"
+    echomsg "Your current version is: " . versionTest
     echohl None
     " !
     return

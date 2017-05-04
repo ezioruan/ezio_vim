@@ -268,8 +268,6 @@ let g:acp_completeoptPreview=1
 " ===========================================================
 " FileType specific changes
 " ============================================================
-""Use template for python file"
-autocmd BufNewFile *.py 0r ~/.vim/template/empty.py
 "run python scripts"
 map <F9> :w<cr>:!python %<cr>
 "debug python scripts
@@ -303,7 +301,6 @@ function UpdateDate()
     normal ''
 endf
 autocmd BufNewFile *.py call AddTitlePython()
-autocmd BufWritePre *.py call UpdateDate()
 autocmd BufWritePost *.py call Autopep8()
 let g:autopep8_disable_show_diff=1
 
@@ -417,14 +414,6 @@ let g:delimitMate_matchpairs = '(:),{:},[:],¿:?,¡:!'
 
 
 
-"js fmt
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-let g:js_fmt_fail_silently = 1
-let g:js_fmt_autosave = 0
-let g:js_fmt_command = "jsfmt"
-let g:jsx_ext_required = 0
-let g:syntastic_javascript_checkers = ['eslint']
-
 "js beautify
 "autocmd FileType javascript autocmd BufWritePre <buffer> call JsBeautify() 
 autocmd FileType javascript noremap <buffer>  <c-a> :call JsBeautify()<cr>
@@ -449,6 +438,13 @@ autocmd FileType html vnoremap <buffer> <c-a> :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <c-a> :call RangeCSSBeautify()<cr>
 
 
+
+" php fmt
+" A standard type: PEAR, PHPCS, PSR1, PSR2, Squiz and Zend
+let g:phpfmt_standard = 'PSR2'
+let g:phpfmt_autosave = 0
+"let g:phpfmt_command = '/path/to/phpcbf'
+"let g:phpfmt_tmp_dir = '/path/to/tmp/folder'
 
 
 
