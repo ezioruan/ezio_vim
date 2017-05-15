@@ -413,6 +413,8 @@ nnoremap <C-n> :call NumberToggle()<cr>
 let g:delimitMate_matchpairs = '(:),{:},[:],¿:?,¡:!' 
 
 
+let g:syntastic_javascript_checkers = ['eslint']
+
 
 "js beautify
 "autocmd FileType javascript autocmd BufWritePre <buffer> call JsBeautify() 
