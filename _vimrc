@@ -121,11 +121,6 @@ nmap <leader>a <Esc>:Ack!
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
 
-" Jump to the definition of whatever the cursor is on
-map <leader>j :RopeGotoDefinition<CR>
-
-" Rename whatever the cursor is on (including references to it)
-map <leader>r :RopeRename<CR>
 " ==========================================================
 " Pathogen - Allows us to organize our vim plugins
 " ==========================================================
@@ -284,24 +279,8 @@ au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smart
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
-function AddTitlePython()
-    call setline(1, "#!/usr/bin/env python")
-    call append(1, "#coding=utf-8")
-    call append(2, '"""')
-    call append(3,"Filename:       " . expand("%"))
-    call append(4,"Last modified:  2010-04-01 00:00")
-    call append(5,"")
-    call append(6,"Description:")
-    call append(7,"")
-    call append(8, '"""')
-endf
-function UpdateDate()
-    normal m'
-    exe "1,7 s/Last modified:.*/Last modified:".strftime("  %Y-%m-%d %H:%M")."/e"
-    normal ''
-endf
-autocmd BufNewFile *.py call AddTitlePython()
-autocmd BufWritePost *.py call Autopep8()
+""Use template for python file"
+autocmd BufNewFile *.py 0r ~/.vim/template/empty.py
 let g:autopep8_disable_show_diff=1
 
 " Add the virtualenv's site-packages to vim path   
