@@ -18,10 +18,10 @@ fu! s:gocodeCurrentBuffer()
 	return file
 endf
 
-let s:vim_system = get(g:, 'gocomplete#system_function', function('system'))
+let s:vim_system = get(g:, 'gocomplete#system_function', 'system')
 
 fu! s:system(str, ...)
-	return (a:0 == 0 ? s:vim_system(a:str) : s:vim_system(a:str, join(a:000)))
+	return call(s:vim_system, [a:str] + a:000)
 endf
 
 fu! s:gocodeShellescape(arg)
@@ -60,7 +60,7 @@ fu! s:gocodeCursor()
 	if &encoding != 'utf-8'
 		let c = col('.')
 		let buf = line('.') == 1 ? "" : (join(getline(1, line('.')-1), "\n") . "\n")
-		let buf .= c < 1 ? "" : getline('.')[:c-1]
+		let buf .= c == 1 ? "" : getline('.')[:c-2]
 		return printf('%d', len(iconv(buf, &encoding, "utf-8")))
 	endif
 	return printf('%d', line2byte(line('.')) + (col('.')-2))

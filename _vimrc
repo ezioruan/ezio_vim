@@ -315,40 +315,6 @@ let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 
-" for go
-"autocmd FileType go compiler golang
-let g:golang_goroot = "/usr/local/go"
-"autocmd BufWritePre *.go :Fmt
-let g:golang_cwindow = 1 "for the quickfix window
-let g:tagbar_type_go = {
-            \ 'ctagstype' : 'go',
-            \ 'kinds'     : [
-            \ 'p:package',
-            \ 'i:imports:1',
-            \ 'c:constants',
-            \ 'v:variables',
-            \ 't:types',
-            \ 'n:interfaces',
-            \ 'w:fields',
-            \ 'e:embedded',
-            \ 'm:methods',
-            \ 'r:constructor',
-            \ 'f:functions'
-            \ ],
-            \ 'sro' : '.',
-            \ 'kind2scope' : {
-            \ 't' : 'ctype',
-            \ 'n' : 'ntype'
-            \ },
-            \ 'scope2kind' : {
-            \ 'ctype' : 't',
-            \ 'ntype' : 'n'
-            \ },
-            \ 'ctagsbin'  : 'gotags',
-            \ 'ctagsargs' : '-sort -silent'
-            \ }
-"autocmd BufRead,BufWritePre *.html normal gg=G
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " for sdcv
 nmap <F2> : !sdcv <C-R>=expand("<cword>")<CR><CR>
 nmap <F3> :lv /<c-r>=expand("<cword>")<cr>/ **/*.go<cr>:lw<cr> 
@@ -442,3 +408,32 @@ let g:syntastic_check_on_wq = 0
 set completefunc=autoprogramming#complete
 
 
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+let g:go_fmt_command = "goimports"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+let g:rehash256 = 1
+let g:molokai_original = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_deadline = "5s"
+let g:go_def_mode = 'godef'
+let g:go_decls_includes = "func,type"
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+let g:go_auto_sameids = 1
