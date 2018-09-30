@@ -437,3 +437,7 @@ let g:go_def_mode = 'godef'
 let g:go_decls_includes = "func,type"
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 let g:go_auto_sameids = 1
+
+
+" typescript
+let g:syntastic_typescript_checkers = ['']
