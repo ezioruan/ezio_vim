@@ -285,17 +285,6 @@ autocmd BufNewFile *.py 0r ~/.vim/template/empty.py
 let g:autopep8_disable_show_diff=1
 
 " Add the virtualenv's site-packages to vim path   
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
-
 " Load up virtualenv's vimrc if it exists
 if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
@@ -316,7 +305,7 @@ let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
 
 " for sdcv
-nmap <F2> : !sdcv <C-R>=expand("<cword>")<CR><CR>
+nmap <F1> : !sdcv <C-R>=expand("<cword>")<CR><CR>
 nmap <F3> :lv /<c-r>=expand("<cword>")<cr>/ **/*.go<cr>:lw<cr> 
 nmap <F4> :lv /<c-r>=expand("<cword>")<cr>/ **/*.py<cr>:lw<cr> 
 nmap <F5> :lv /<c-r>=expand("<cword>")<cr>/ **/*.js<cr>:lw<cr> 
@@ -383,6 +372,7 @@ autocmd FileType javascript vnoremap <buffer>  <c-a> :call RangeJsBeautify()<cr>
 autocmd FileType json vnoremap <buffer> <c-a> :call RangeJsonBeautify()<cr>
 autocmd FileType jsx vnoremap <buffer> <c-a> :call RangeJsxBeautify()<cr>
 autocmd FileType html vnoremap <buffer> <c-a> :call RangeHtmlBeautify()<cr>
+autocmd FileType php vnoremap <buffer> <c-a> :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <c-a> :call RangeCSSBeautify()<cr>
 
 
@@ -408,36 +398,26 @@ let g:syntastic_check_on_wq = 0
 set completefunc=autoprogramming#complete
 
 
-" run :GoBuild or :GoTestCompile based on the go file
-function! s:build_go_files()
-  let l:file = expand('%')
-  if l:file =~# '^\f\+_test\.go$'
-    call go#test#Test(0, 1)
-  elseif l:file =~# '^\f\+\.go$'
-    call go#cmd#Build(0)
-  endif
-endfunction
-
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
-let g:go_fmt_command = "goimports"
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-let g:rehash256 = 1
-let g:molokai_original = 1
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_metalinter_deadline = "5s"
-let g:go_def_mode = 'godef'
-let g:go_decls_includes = "func,type"
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
-let g:go_auto_sameids = 1
-
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\}
+let g:ale_fixers = {'javascript': ['standard']}
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+" Set this if you want to.
+" This can be useful if you are combining ALE with
+" some other plugin which sets quickfix errors, etc.
+let g:ale_keep_list_window_open = 1
 
 " typescript
 let g:syntastic_typescript_checkers = ['']
+
+
+
+au filetype go inoremap <buffer> . .<C-x><C-o>
+nmap <silent> <buffer> <Leader>h : <C-u>call GOVIMHover()<CR>
+set timeoutlen=1000 ttimeoutlen=0
+set signcolumn=number
