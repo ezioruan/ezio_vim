@@ -1,0 +1,12 @@
+cmdargs:
+  severity: style_problem
+  color: true
+  env:
+    neovim: true
+
+policies:
+  ProhibitImplicitScopeVariable:
+    enabled: false
+  # TODO
+  ProhibitAutocmdWithNoGroup:
+    enabled: false

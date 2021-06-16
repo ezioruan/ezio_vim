@@ -1,0 +1,10 @@
+/spec/support/vim_plugins
+/spec/fixtures
+!/spec/fixtures/.keep
+/spec/support/bin
+/failed_specs.txt
+/.pry_history
+/*.log
+
+# screenshots
+/*.png
