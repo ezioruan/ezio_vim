@@ -421,3 +421,4 @@ au filetype go inoremap <buffer> . .<C-x><C-o>
 nmap <silent> <buffer> <Leader>h : <C-u>call GOVIMHover()<CR>
 set timeoutlen=1000 ttimeoutlen=0
 set signcolumn=number
+let g:TerminusFocusReporting=0
