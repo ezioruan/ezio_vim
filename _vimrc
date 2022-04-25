@@ -363,11 +363,6 @@ autocmd FileType html noremap <buffer> <c-a> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <c-a> :call CSSBeautify()<cr>
 
-" will run esformatter after pressing <leader> followed by the 'e' and 's'
-" keys
-nnoremap <silent> <leader>es :Esformatter<CR>
-vnoremap <silent> <leader>es :EsformatterVisual<CR>
-
 autocmd FileType javascript vnoremap <buffer>  <c-a> :call RangeJsBeautify()<cr>
 autocmd FileType json vnoremap <buffer> <c-a> :call RangeJsonBeautify()<cr>
 autocmd FileType jsx vnoremap <buffer> <c-a> :call RangeJsxBeautify()<cr>
@@ -422,3 +417,5 @@ nmap <silent> <buffer> <Leader>h : <C-u>call GOVIMHover()<CR>
 set timeoutlen=1000 ttimeoutlen=0
 set signcolumn=number
 let g:TerminusFocusReporting=0
+let g:snipMate = { 'snippet_version' : 1 }
+
