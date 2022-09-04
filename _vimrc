@@ -274,7 +274,9 @@ autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 so
 
 " Python
 "au BufRead *.py compiler nose
-au FileType python set omnifunc=pythoncomplete#Complete
+
+" au FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal omnifunc=python3complete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 autocmd BufWritePost *.py call Autopep8()
@@ -283,6 +285,17 @@ let g:pyflakes_use_quickfix = 0
 ""Use template for python file"
 autocmd BufNewFile *.py 0r ~/.vim/template/empty.py
 let g:autopep8_disable_show_diff=1
+
+let g:jedi#completions_enabled = 1
+let g:jedi#goto_command = "gt"
+let g:jedi#goto_assignments_command = "gs"
+let g:jedi#goto_stubs_command = "gs"
+let g:jedi#goto_definitions_command = "gd"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "us"
+let g:jedi#completions_command = "<C-a>"
+let g:jedi#rename_command = "rn"
+" let g:jedi#use_splits_not_buffers = "left"
 
 " Add the virtualenv's site-packages to vim path   
 " Load up virtualenv's vimrc if it exists
