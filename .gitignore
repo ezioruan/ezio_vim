@@ -31,4 +31,5 @@
 *.cmp
 *.tmp
 .DS_Store
-
+*.swp
+_vim/black/

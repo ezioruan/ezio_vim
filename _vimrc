@@ -269,7 +269,15 @@ map <F9> :w<cr>:!python %<cr>
 map <c-F9> :w<cr>:!python -m pdb % <cr>
 " Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
+highlight BadWhitespace ctermbg=red guibg=darkred
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+augroup black_on_save
+  autocmd!
+  autocmd BufWritePre *.py Black
+augroup end
+let g:black_linelength=79
 
 
 " Python
@@ -279,7 +287,7 @@ autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 so
 autocmd FileType python setlocal omnifunc=python3complete#Complete
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-autocmd BufWritePost *.py call Autopep8()
+" autocmd BufWritePost *.py call Autopep8()
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
 ""Use template for python file"
