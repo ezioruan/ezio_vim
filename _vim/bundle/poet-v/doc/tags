@@ -1,0 +1,12 @@
+:PoetvActivate	poetv.txt	/*:PoetvActivate*
+:PoetvDeactivate	poetv.txt	/*:PoetvDeactivate*
+g:poetv_auto_activate	poetv.txt	/*g:poetv_auto_activate*
+g:poetv_executables	poetv.txt	/*g:poetv_executables*
+g:poetv_set_environment	poetv.txt	/*g:poetv_set_environment*
+g:poetv_statusline_symbol	poetv.txt	/*g:poetv_statusline_symbol*
+poet-v	poetv.txt	/*poet-v*
+poetv	poetv.txt	/*poetv*
+poetv-author	poetv.txt	/*poetv-author*
+poetv-commands	poetv.txt	/*poetv-commands*
+poetv-configuration	poetv.txt	/*poetv-configuration*
+poetv.txt	poetv.txt	/*poetv.txt*

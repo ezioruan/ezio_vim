@@ -282,6 +282,8 @@ let g:black_linelength=79
 
 " Python
 "au BufRead *.py compiler nose
+let g:poetv_executables = ['poetry']
+let g:poetv_auto_activate = 1
 
 " au FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python setlocal omnifunc=python3complete#Complete
