@@ -111,7 +111,9 @@ imap <C-W> <C-O><C-W>
 
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '__pycache__']
 
+set wildignore+=*/bin/*,main,*/__pycache__/*,*.pyc,*.swp
 
 " Run command-t file search
 map <leader>f :CommandT<CR>
@@ -273,12 +275,15 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
+autocmd BufWritePre *.py call isort#Isort(0, line('$'), v:null, v:false)
 augroup black_on_save
   autocmd!
-  autocmd BufWritePre *.py Black
+  autocmd BufWritePre *.py Black 
 augroup end
 let g:black_linelength=79
+let g:black_quiet=1
 
+let g:isort_vim_options = '--profile black'
 
 " Python
 "au BufRead *.py compiler nose
@@ -287,8 +292,8 @@ let g:poetv_auto_activate = 1
 
 " au FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType python setlocal omnifunc=python3complete#Complete
-au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+" au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+" au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " autocmd BufWritePost *.py call Autopep8()
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
