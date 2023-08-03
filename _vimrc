@@ -311,6 +311,7 @@ let g:jedi#usages_command = "us"
 let g:jedi#completions_command = "<C-a>"
 let g:jedi#rename_command = "rn"
 " let g:jedi#use_splits_not_buffers = "left"
+" let g:jedi#environment_path = ".venv"
 
 " Add the virtualenv's site-packages to vim path   
 " Load up virtualenv's vimrc if it exists
