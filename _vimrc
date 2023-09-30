@@ -448,3 +448,5 @@ set signcolumn=number
 let g:TerminusFocusReporting=0
 let g:snipMate = { 'snippet_version' : 1 }
 
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
